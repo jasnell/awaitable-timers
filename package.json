@@ -1,0 +1,23 @@
+{
+  "name": "awaitable-timers",
+  "version": "1.0.0",
+  "description": "Polyfill of Node.js awaitable timers",
+  "author": "James M Snell <jasnell@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gen-esm-wrapper": "^1.1.1"
+  },
+  "scripts": {
+    "test": "npm run build && node ./index.mjs",
+    "build": "gen-esm-wrapper . ./index.mjs",
+    "prepack": "npm run build"
+  },
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.mjs"
+    },
+    "./": "./"
+  }
+}
